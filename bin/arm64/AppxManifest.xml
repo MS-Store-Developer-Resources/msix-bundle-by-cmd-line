@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10">
+  <Identity Name="msstorefast.7zippreviewmsix" Version="1.0.0.0" Publisher="CN=AB8AF447-0085-4396-9EBB-2DA4F52A91BB" ProcessorArchitecture="arm64" />
+  <Properties>
+    <DisplayName>7zip preview msix</DisplayName>
+    <PublisherDisplayName>msstorefast</PublisherDisplayName>
+    <Description>7-Zip is a free and open-source file archiver, a utility used to place groups of files within compressed containers known as "archives".</Description>
+    <Logo>images\7zip-icon-size_24.png</Logo>
+  </Properties>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0"/>
+  </Dependencies>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust"/>
+  </Capabilities>
+  <Applications>
+    <Application Id="sevenzip" Executable="7z.exe" EntryPoint="Windows.FullTrustApplication"
+      uap10:RuntimeBehavior="packagedClassicApp"
+      uap10:TrustLevel="mediumIL">
+    <Extensions>
+      <uap3:Extension Category="windows.appExecutionAlias" EntryPoint="Windows.FullTrustApplication">
+        <uap3:AppExecutionAlias>
+          <desktop:ExecutionAlias Alias="7z.exe" />
+        </uap3:AppExecutionAlias>
+      </uap3:Extension>
+    </Extensions>
+      <uap:VisualElements
+        BackgroundColor="#464646"
+        DisplayName="7-Zip (preview msix)"
+        Square150x150Logo="images\7zip-icon-size_150.png"
+        Square44x44Logo="images\7zip-icon-size_44.png"
+        Description="7-Zip is a free and open-source file archiver, a utility used to place groups of files within compressed containers known as 'archives'" />
+    </Application>
+  </Applications>
+</Package>
